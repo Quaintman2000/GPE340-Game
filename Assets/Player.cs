@@ -14,14 +14,14 @@ public class Player : Pawn
     void Update()
     {
         // Grabs the direction for the player's joystick.
-        Vector3 stickDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector3 stickDirection = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
         // Max's the magnitude of the vector to 1.
         stickDirection = Vector3.ClampMagnitude(stickDirection, 1);
         // Converts the vector to local space.
         Vector3 animationDirection = transform.InverseTransformDirection(stickDirection);
 
         // Sets the floats for the animator.
-        anim.SetFloat("Forward", animationDirection.y * speed);
+        anim.SetFloat("Forward", animationDirection.z * speed);
         anim.SetFloat("Right", animationDirection.x * speed);
 
         // Rotate player to the mouse pointer
