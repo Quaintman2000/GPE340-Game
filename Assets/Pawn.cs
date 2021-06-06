@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Pawn : MonoBehaviour
 {
+    // Stores animator.
     private protected Animator anim;
+    // Stores Speed and turn speed.
     [SerializeField] protected float speed = 5;
     [SerializeField] protected float turnSpeed = 180;
+    // Stores Camera the player will be using.
     public Camera playerCamera;
 
     // Start is called before the first frame update

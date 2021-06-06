@@ -32,7 +32,7 @@ public class Player : Pawn
             anim.SetBool("IsGrounded", Physics.Raycast(groundPoint.position, Vector3.down, 0.5f));
         }
 
-        //
+        // If you press down the left control.
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
             anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
@@ -45,7 +45,7 @@ public class Player : Pawn
     {
         // Grabs the direction for the player's joystick.
         Vector3 stickDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Debug.Log("Stick Direction: " + stickDirection);
+        
         // Max's the magnitude of the vector to 1.
         stickDirection = Vector3.ClampMagnitude(stickDirection, 1);
         // Converts the vector to local space.
@@ -55,9 +55,8 @@ public class Player : Pawn
         anim.SetFloat("Forward", animationDirection.z * speed);
         anim.SetFloat("Right", animationDirection.x * speed);
 
-        Debug.Log("Foward: " + anim.GetFloat("Forward"));
-        Debug.Log("Right: " + anim.GetFloat("Right"));
-        // Rotate player to the mouse pointer
+      
+        // Rotate player to the mouse pointer.
         RotateToMousePointer();
     }
     /// <summary>
