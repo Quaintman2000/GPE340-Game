@@ -17,6 +17,9 @@ public class CameraPlayerFollow : MonoBehaviour
         MoveWithPlayer();
     }
 
+    /// <summary>
+    /// Moves the camera's position along with the player
+    /// </summary>
     void MoveWithPlayer()
     {
         // Create a vector for position to be at.

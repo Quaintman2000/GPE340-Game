@@ -20,7 +20,10 @@ public class Pawn : MonoBehaviour
     {
        
     }
-
+    /// <summary>
+    /// Rotates the object towards the look at point.
+    /// </summary>
+    /// <param name="lookAtPoint">The Vector3 Position to look at.</param>
     protected void RotateTowards(Vector3 lookAtPoint)
     {
         // Find the rotation to look at our look at point.
