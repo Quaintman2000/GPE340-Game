@@ -11,7 +11,7 @@ public class Pawn : MonoBehaviour
     [SerializeField] protected float turnSpeed = 180;
     // Stores Camera the player will be using.
     public Camera playerCamera;
-
+    public Weapon weapon;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,24 @@ public class Pawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if(Input.GetButtonDown("Fire1"))
+        {
+            weapon.OnTriggerPull();
+        }
+       if(Input.GetButtonUp("Fire1"))
+        {
+            weapon.OntriggerRelease();
+        }
+       if(Input.GetButtonDown("Fire2"))
+        {
+            //Todo alt fire
+            
+        }
+    }
+
+    public void EquipWeapon(Weapon weapon)
+    {
+
     }
     /// <summary>
     /// Rotates the object towards the look at point.
