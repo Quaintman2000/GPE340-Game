@@ -2,8 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordWeapon : MonoBehaviour
+public class SwordWeapon : Weapon
 {
+    public override void OnTriggerHold()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void OnTriggerPull()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void OntriggerRelease()
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

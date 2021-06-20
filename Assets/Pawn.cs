@@ -21,19 +21,7 @@ public class Pawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetButtonDown("Fire1"))
-        {
-            weapon.OnTriggerPull();
-        }
-       if(Input.GetButtonUp("Fire1"))
-        {
-            weapon.OntriggerRelease();
-        }
-       if(Input.GetButtonDown("Fire2"))
-        {
-            //Todo alt fire
-            
-        }
+       
     }
 
     public void EquipWeapon(Weapon weapon)
@@ -52,5 +40,38 @@ public class Pawn : MonoBehaviour
 
         // Rotates a little bit towards our goal.
         transform.rotation = Quaternion.RotateTowards(transform.rotation, goalRotation, turnSpeed * Time.deltaTime);
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if(weapon != null)
+        {
+            anim.SetLookAtPosition(weapon.transform.position + weapon.transform.forward);
+            if(weapon.rightHandPoint != null)
+            {
+                anim.SetIKPosition(AvatarIKGoal.RightHand, weapon.rightHandPoint.position);
+                anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                anim.SetIKRotation(AvatarIKGoal.RightHand, weapon.rightHandPoint.rotation);
+                anim.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
+            }
+            else
+            {
+                anim.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
+                anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+            }
+
+            if (weapon.leftHandPoint != null)
+            {
+                anim.SetIKPosition(AvatarIKGoal.LeftHand, weapon.leftHandPoint.position);
+                anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+                anim.SetIKRotation(AvatarIKGoal.LeftHand, weapon.leftHandPoint.rotation);
+                anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
+            }
+            else
+            {
+                anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0);
+                anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
+            }
+        }
     }
 }

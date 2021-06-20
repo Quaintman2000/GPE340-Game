@@ -33,9 +33,23 @@ public class Player : Pawn
         }
 
         // If you press down the left control.
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.OnTriggerPull();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            weapon.OntriggerRelease();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            //Todo alt fire
+
         }
     }
     /// <summary>
@@ -45,7 +59,7 @@ public class Player : Pawn
     {
         // Grabs the direction for the player's joystick.
         Vector3 stickDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        
+
         // Max's the magnitude of the vector to 1.
         stickDirection = Vector3.ClampMagnitude(stickDirection, 1);
         // Converts the vector to local space.
@@ -55,7 +69,7 @@ public class Player : Pawn
         anim.SetFloat("Forward", animationDirection.z * speed);
         anim.SetFloat("Right", animationDirection.x * speed);
 
-      
+
         // Rotate player to the mouse pointer.
         RotateToMousePointer();
     }
@@ -79,5 +93,5 @@ public class Player : Pawn
         RotateTowards(targetPoint);
     }
 
-    
+
 }
