@@ -7,27 +7,35 @@ public class Pawn : MonoBehaviour
     // Stores animator.
     private protected Animator anim;
     // Stores Speed and turn speed.
-    [SerializeField] protected float speed = 5;
-    [SerializeField] protected float turnSpeed = 180;
+    [SerializeField, Tooltip("The speed the player moves.")]
+    protected float speed = 5;
+    [SerializeField, Tooltip("The speed the player turns.")] 
+    protected float turnSpeed = 180;
     // Stores Camera the player will be using.
+    [Tooltip("Store the camera in the scene here.")]
     public Camera playerCamera;
+    [Tooltip("The weapon the pawn is currently using.")]
     public Weapon weapon;
+    [Tooltip("The position the weapon instaniates at so the IK doesn't look as weird.")]
     public Transform gunHoldPoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-    }
 
+    }
+    /// <summary>
+    /// Instaniates the weapon at the gunHoldPosition to look as normal as possible.
+    /// </summary>
+    /// <param name="weaponToEquip">The weapon to spawn.</param>
     public void EquipWeapon(Weapon weaponToEquip)
     {
-        if(weapon != null)
+        if (weapon != null)
         {
             Destroy(weapon.gameObject);
         }
@@ -49,13 +57,16 @@ public class Pawn : MonoBehaviour
         // Rotates a little bit towards our goal.
         transform.rotation = Quaternion.RotateTowards(transform.rotation, goalRotation, turnSpeed * Time.deltaTime);
     }
-
+    /// <summary>
+    /// Activates all the IK for the joints.
+    /// </summary>
+    /// <param name="layerIndex"></param>
     private void OnAnimatorIK(int layerIndex)
     {
-        if(weapon != null)
+        if (weapon != null)
         {
             anim.SetLookAtPosition(weapon.transform.position + weapon.transform.forward);
-            if(weapon.rightHandPoint != null)
+            if (weapon.rightHandPoint != null)
             {
                 anim.SetIKPosition(AvatarIKGoal.RightHand, weapon.rightHandPoint.position);
                 anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);

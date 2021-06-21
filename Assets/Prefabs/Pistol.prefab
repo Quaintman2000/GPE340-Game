@@ -82,7 +82,7 @@ MonoBehaviour:
   fireType: 0
   fireRate: 85
   damage: 15
-  projectile: {fileID: 3293345413410508174, guid: f46abefcbcd5278418da05e9f1a8f3ff,
+  projectile: {fileID: 1243517433074741441, guid: f46abefcbcd5278418da05e9f1a8f3ff,
     type: 3}
   firepoint: {fileID: 2520208403006706106}
 --- !u!1 &7221118155964122048

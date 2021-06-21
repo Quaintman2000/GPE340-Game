@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdb911b5ec0f24478ab80f202d4981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileForce: 5000
+  projectileForce: 1000
   lifeSpan: 6.36
   shooter: {fileID: 0}
   damage: 0

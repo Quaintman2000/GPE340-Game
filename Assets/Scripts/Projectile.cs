@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float projectileForce;
+    // Stores the amount of force applied to the bullet when it fires.
+    [SerializeField, Tooltip("The amount of force applied to the bullet when it fires."), Range(100, 2000)]
+    private float projectileForce;
     // Start is called before the first frame update
-    [SerializeField]
-    [Tooltip("How long the projectile lasts in the scene in seconds.")]
-    [Range(0, 20)]
+    [SerializeField, Tooltip("How long the projectile lasts in the scene in seconds."), Range(0, 20)]
     float lifeSpan;
-
-    public GameObject shooter;
+    // Stores amount of damage the projectile deals.
     public float damage;
 
     void Start()
     {
+        // Grabs the rigid body.
         Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        // Applys set forward force to the projectile.
         rigidbody.AddForce(transform.forward * projectileForce);
+        // Destoy the bullet after set lifespan time in case it never hits something.
         Destroy(this.gameObject, lifeSpan);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // If hit the shooter.
-        if(other.gameObject == shooter)
-        {
-            // Do nothing.
-        }
+        Debug.Log("Hit " + other.gameObject.name);
         // If it hits anything else with a health bar
-        else if(other.gameObject.GetComponent<Health>() != null)
+        if (other.gameObject.GetComponent<Health>() != null)
         {
+            Debug.Log(other.gameObject.name + "has a health");
             // Subtract their health from damage.
+            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+
         }
-        // Hits anything else.
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        // destroys the bullet after it hits something and applies it effects.
+        Destroy(this.gameObject);
+
     }
 
 }

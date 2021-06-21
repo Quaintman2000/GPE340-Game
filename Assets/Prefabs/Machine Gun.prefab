@@ -141,8 +141,8 @@ MonoBehaviour:
   leftHandPoint: {fileID: 5436570775252502496}
   fireType: 1
   fireRate: 650
-  damage: 2
-  projectile: {fileID: 3293345413410508174, guid: f46abefcbcd5278418da05e9f1a8f3ff,
+  damage: 11.91
+  projectile: {fileID: 1243517433074741441, guid: f46abefcbcd5278418da05e9f1a8f3ff,
     type: 3}
   firepoint: {fileID: 212567989863639490}
 --- !u!1001 &2846086366221203430
