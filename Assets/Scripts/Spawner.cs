@@ -7,7 +7,7 @@ public abstract class Spawner : MonoBehaviour
     // The prefab selected to spawn.
     protected GameObject prefabToSpawn;
     // Stores a list of prefabs to spawn.
-    [SerializeField,Tooltip("The list of prefabs that should spawn here.")]
+    [Header("Spawner Mechanics:"), SerializeField,Tooltip("The list of prefabs that should spawn here.")]
     protected List<GameObject> spawnPrefabsList;
     // The spawned enity at the current time.
     protected GameObject spawnedEnity;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // Stores the amount of force applied to the bullet when it fires.
-    [SerializeField, Tooltip("The amount of force applied to the bullet when it fires."), Range(100, 2000)]
+    [Header("Projectile Stats:"), SerializeField, Tooltip("The amount of force applied to the bullet when it fires."), Range(100, 2000)]
     private float projectileForce;
     // Start is called before the first frame update
     [SerializeField, Tooltip("How long the projectile lasts in the scene in seconds."), Range(0, 20)]

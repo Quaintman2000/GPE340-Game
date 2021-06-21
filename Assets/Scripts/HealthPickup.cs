@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPickup : Pickup
 {
     // Stores how much health the pickup heals.
-    [SerializeField, Tooltip("The amount of health this pick up heals. Defaults to ten.")]
+    [Header("Health:"), SerializeField, Tooltip("The amount of health this pick up heals. Defaults to ten.")]
     float healValue = 10;
     /// <summary>
     /// Heals the pawn with set heal value.

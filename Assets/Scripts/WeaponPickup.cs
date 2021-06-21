@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponPickup : Pickup
 {
     // Stores the weapon the player picks up.
-    [Tooltip("The weapon the pawn equips.")]
+    [Header("Weapon:"), Tooltip("The weapon the pawn equips.")]
     public Weapon weapon;
     /// <summary>
     /// Equips the weapon set to the pawn.

@@ -5,16 +5,9 @@ using UnityEngine;
 public class GunWeapon : Weapon
 {
     // Stores fire rate.
-    [SerializeField, Range(0.0001f, 90000),Tooltip("The maximum fire rate of the weapon. Rounds per Minute")]
+    [Header("Gun Mechanics:"), SerializeField, Range(0.0001f, 90000),Tooltip("The maximum fire rate of the weapon. Rounds per Minute")]
     private float fireRate;
-    // Stores damage value per round.
-    [SerializeField, Tooltip("The maximum damage per shot of the weapon.")]
-    private float damage;
-    // Stores the projectile it shoots.
-    [SerializeField]
-    Projectile projectile;
-    // The firepoint position from which the projectile spawns at.
-    public GameObject firepoint;
+   
     // Stores the timer.
     float timer;
    // Determines if the gun can shoot.

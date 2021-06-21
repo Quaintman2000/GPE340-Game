@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     // Stores max health.
-    [SerializeField, Tooltip("The maximum health the player could have.")]
+    [Header("Health Stats:"), SerializeField, Tooltip("The maximum health the player could have.")]
     float maxHealth = 100;
     // Stores current health.
     [Tooltip("The health the player has.")]

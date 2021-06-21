@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SwordWeapon : Weapon
 {
+    // Stores the animator.
+    [SerializeField, Tooltip("Place the player animator here.")]
+    Animator anim;
     public override void ShootProjectile()
     {
         throw new System.NotImplementedException();
@@ -15,7 +18,7 @@ public class SwordWeapon : Weapon
 
     public override void OnTriggerPull()
     {
-        throw new System.NotImplementedException();
+        anim.SetTrigger("SlashTrigger");
     }
 
     public override void OntriggerRelease()
@@ -33,5 +36,12 @@ public class SwordWeapon : Weapon
     void Update()
     {
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Health>() != null)
+        {
+            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }

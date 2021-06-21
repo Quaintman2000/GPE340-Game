@@ -8,11 +8,19 @@ public abstract class Weapon : MonoBehaviour
     // Stores the position of the left and right hand points of the weapon.
     [Tooltip("Store the right and left hand transforms here respectfully.")]
     public Transform rightHandPoint, leftHandPoint;
-
+    // Stores damage value per round.
+    [Header("Projectile Stats:"), SerializeField, Tooltip("The maximum damage per shot of the weapon.")]
+    protected float damage;
+    // Stores the projectile it shoots.
+    [SerializeField, Tooltip("Projectile Fired")]
+    protected Projectile projectile;
+    // The firepoint position from which the projectile spawns at.
+    [Tooltip("The position where the bullet spawns.")]
+    public GameObject firepoint;
     // Stores the firetypes available.
     public enum FireType { singleFire, autoFire };
     // Stores the firetype chosen.
-    [SerializeField,Tooltip("Select the fire type desired for the weapon. Auto Fire: Click and hold for continuous fire. Single Fire: Click once, shoot once.")]
+    [Header("Attack Mechanics:"), SerializeField,Tooltip("Select the fire type desired for the weapon. Auto Fire: Click and hold for continuous fire. Single Fire: Click once, shoot once.")]
     public FireType fireType;
     // Start is called before the first frame update
     public virtual void Start()

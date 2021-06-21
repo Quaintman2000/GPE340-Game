@@ -7,14 +7,15 @@ public class Pawn : MonoBehaviour
     // Stores animator.
     private protected Animator anim;
     // Stores Speed and turn speed.
-    [SerializeField, Tooltip("The speed the player moves.")]
+
+    [Header("Movement:"),SerializeField, Tooltip("The speed the player moves.")]
     protected float speed = 5;
     [SerializeField, Tooltip("The speed the player turns.")] 
     protected float turnSpeed = 180;
     // Stores Camera the player will be using.
     [Tooltip("Store the camera in the scene here.")]
     public Camera playerCamera;
-    [Tooltip("The weapon the pawn is currently using.")]
+    [Header("Weaponry:"), Tooltip("The weapon the pawn is currently using.")]
     public Weapon weapon;
     [Tooltip("The position the weapon instaniates at so the IK doesn't look as weird.")]
     public Transform gunHoldPoint;

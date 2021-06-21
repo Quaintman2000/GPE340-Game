@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     // Stores the health slider.
-    [SerializeField]
+    [Header("UI:"), SerializeField]
     Slider healthSlider;
     // References the player's health.
     public Health playerHealth;

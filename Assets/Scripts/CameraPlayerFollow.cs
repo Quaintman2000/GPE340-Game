@@ -6,7 +6,7 @@ public class CameraPlayerFollow : MonoBehaviour
 {
     // Needed variables.
     public Transform playerToFollow;
-    [SerializeField, Tooltip("The amount of offset from the player's position.")]
+    [Header("Camera Movement:"), SerializeField, Tooltip("The amount of offset from the player's position.")]
     protected Vector3 cameraOffset;
     [SerializeField,Tooltip("The speed the camera travels to keep up with the player.")]
     protected float cameraSpeed;
