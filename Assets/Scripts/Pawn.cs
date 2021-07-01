@@ -9,7 +9,7 @@ public class Pawn : MonoBehaviour
     // Stores Speed and turn speed.
 
     [Header("Movement:"),SerializeField, Tooltip("The speed the player moves.")]
-    protected float speed = 5;
+    public float speed = 5;
     [SerializeField, Tooltip("The speed the player turns.")] 
     protected float turnSpeed = 180;
     // Stores Camera the player will be using.
