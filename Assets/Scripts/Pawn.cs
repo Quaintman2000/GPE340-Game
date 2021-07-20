@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Pawn : MonoBehaviour
 {
     // Stores animator.
@@ -19,10 +20,15 @@ public class Pawn : MonoBehaviour
     public Weapon weapon;
     [Tooltip("The position the weapon instaniates at so the IK doesn't look as weird.")]
     public Transform gunHoldPoint;
+    [SerializeField, Tooltip("The force applied when the user jumps.")]
+    protected float jumpForce;
+
+    public Rigidbody rgbd;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -57,6 +63,17 @@ public class Pawn : MonoBehaviour
 
         // Rotates a little bit towards our goal.
         transform.rotation = Quaternion.RotateTowards(transform.rotation, goalRotation, turnSpeed * Time.deltaTime);
+    }
+
+    protected void Jump()
+    {
+        anim.applyRootMotion = false;
+
+        Vector3 jumpDirection = new Vector3(x: 0, y: 1, z: 1).normalized;
+
+        jumpDirection = transform.InverseTransformDirection(direction: jumpDirection);
+
+        rgbd.AddForce(jumpDirection * jumpForce);
     }
     /// <summary>
     /// Activates all the IK for the joints.

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Spawner : MonoBehaviour
 {
+    [Header("Gizmos Tools")]
+    public Vector3 boxSize = new Vector3(1, 2, 1);
+    public Color gizmoColor = Color.white;
     // The prefab selected to spawn.
     protected GameObject prefabToSpawn;
     // Stores a list of prefabs to spawn.
@@ -51,5 +54,13 @@ public abstract class Spawner : MonoBehaviour
         tf = gameObject.GetComponent<Transform>();
         // Set the next spawntime to be the current time + delay.
         nextSpawnTime = Time.time + spawnDelay;
+    }
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = gizmoColor;
+        
+        float boxOffsetY = boxSize.y / 2;
+        Gizmos.DrawCube(transform.position + (boxOffsetY * Vector3.up), boxSize);
+        Gizmos.DrawRay(transform.position + (boxOffsetY * Vector3.up), transform.forward * (boxSize.z));
     }
 }

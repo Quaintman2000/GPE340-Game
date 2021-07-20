@@ -253,6 +253,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.b
+      value: 0.06871343
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25282e04c1e57e4c8aa36d943abae9b, type: 3}
 --- !u!4 &203572640 stripped
@@ -482,10 +497,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 580148635, guid: 545c7980f91fc2a48b7497bde87dcc9f, type: 3}
-      propertyPath: followTarget
-      value: 
-      objectReference: {fileID: 203572640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 545c7980f91fc2a48b7497bde87dcc9f, type: 3}
 --- !u!1001 &581653182
@@ -560,6 +571,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1259368370}
+    - target: {fileID: 5476327992100364312, guid: 95eab272c6036394b989649480a0c134,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95eab272c6036394b989649480a0c134, type: 3}
 --- !u!1 &600505238
@@ -703,6 +719,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.b
+      value: 0.06871343
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25282e04c1e57e4c8aa36d943abae9b, type: 3}
@@ -1414,7 +1445,7 @@ PrefabInstance:
     - target: {fileID: 936309506655063790, guid: bc44c099f9428ec468bf95154ba72bfa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86188877
+      value: 0.883
       objectReference: {fileID: 0}
     - target: {fileID: 936309506655063790, guid: bc44c099f9428ec468bf95154ba72bfa,
         type: 3}
@@ -1459,6 +1490,21 @@ PrefabInstance:
     - target: {fileID: 936309506655063790, guid: bc44c099f9428ec468bf95154ba72bfa,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952722554494422180, guid: bc44c099f9428ec468bf95154ba72bfa,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 952722554494422180, guid: bc44c099f9428ec468bf95154ba72bfa,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952722554494422180, guid: bc44c099f9428ec468bf95154ba72bfa,
+        type: 3}
+      propertyPath: gizmoColor.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1919,6 +1965,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972904302052583831, guid: c25282e04c1e57e4c8aa36d943abae9b,
+        type: 3}
+      propertyPath: gizmoColor.b
+      value: 0.17554751
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25282e04c1e57e4c8aa36d943abae9b, type: 3}

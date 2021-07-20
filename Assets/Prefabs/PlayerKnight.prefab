@@ -1252,7 +1252,7 @@ MonoBehaviour:
   speed: 5
   turnSpeed: 180
   playerCamera: {fileID: 0}
-  weapon: {fileID: 0}
+  weapon: {fileID: 5476327991321896351}
   gunHoldPoint: {fileID: 5476327992817558228}
   groundPoint: {fileID: 5476327991151849447}
 --- !u!1 &4289862451821350301
@@ -1687,7 +1687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5476327991321896350
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,7 +1876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5476327992152515486
 Transform:
   m_ObjectHideFlags: 0

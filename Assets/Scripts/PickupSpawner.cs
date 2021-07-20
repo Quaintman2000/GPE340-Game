@@ -20,4 +20,5 @@ public class PickupSpawner : Spawner
         base.SpawnHandler();
     }
 
+    
 }
