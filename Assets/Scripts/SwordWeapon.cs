@@ -30,7 +30,7 @@ public class SwordWeapon : Weapon
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     // Update is called once per frame
@@ -38,17 +38,7 @@ public class SwordWeapon : Weapon
     {
         
     }
-    void SetIsAttacking(string setTo)
-    {
-        if(setTo == "True")
-        {
-            isAttacking = true;
-        }
-        else
-        {
-            isAttacking = false;
-        }
-    }
+   
     private void OnTriggerEnter(Collider other)
     {
 

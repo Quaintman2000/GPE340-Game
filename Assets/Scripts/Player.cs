@@ -7,6 +7,11 @@ public class Player : Pawn
     // Helps keep track of our grounded.
     [SerializeField]
     Transform groundPoint;
+    [SerializeField] GameObject swordObject;
+    [SerializeField] GameObject staffObject;
+    // Stores Camera the player will be using.
+    [Tooltip("Store the camera in the scene here.")]
+    public Camera playerCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +42,18 @@ public class Player : Pawn
         {
             anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            swordObject.SetActive(true);
+            staffObject.SetActive(false);
+            weapon = swordObject.GetComponent<Weapon>();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            swordObject.SetActive(false);
+            staffObject.SetActive(true);
+            weapon = staffObject.GetComponent<Weapon>();
+        }
         if(weapon.fireType == Weapon.FireType.autoFire)
         {
             if (Input.GetButton("Fire1"))

@@ -62,7 +62,7 @@ public class Health : MonoBehaviour
     // Die.
     public void Die()
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,2);
     }
 
 }

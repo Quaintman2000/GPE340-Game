@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class MagicStaffWeapon : Weapon
 {
-    Animator anim;
+    // Stores fire rate.
+    [Header("Gun Mechanics:"), SerializeField, Range(0.0001f, 90000), Tooltip("The maximum fire rate of the weapon. Rounds per Minute")]
+    private float fireRate;
+
+    // Stores the timer.
+    float timer;
+    // Determines if the gun can shoot.
+    public bool canShoot
+    {
+        get { return (timer <= 0); }
+    }
+   [SerializeField] Animator anim;
     public override void OnTriggerHold()
     {
         throw new System.NotImplementedException();
@@ -28,5 +39,16 @@ public class MagicStaffWeapon : Weapon
         newProjectile.damage = damage;
     }
 
-   
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Reduces the timer over time so you can keep shooting.
+        timer -= Time.deltaTime;
+    }
 }

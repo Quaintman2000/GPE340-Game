@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed7efcdae91ae84ebd01b427e0f992f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 0}
+  boxSize: {x: 1, y: 2, z: 1}
+  gizmoColor: {r: 1, g: 1, b: 1, a: 1}
   spawnPrefabsList:
-  - {fileID: 6256171150530203635, guid: 545c7980f91fc2a48b7497bde87dcc9f, type: 3}
-  spawnedEnity: {fileID: 0}
+  - {fileID: 5804477544534965023, guid: 9befcaef539547e428d3fc8e7c19d481, type: 3}
+  - {fileID: 2730134199097957863, guid: d4a6db3edc2652f45bcc382cb7b6ba96, type: 3}
   spawnDelay: 2

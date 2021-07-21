@@ -13,9 +13,7 @@ public class Pawn : MonoBehaviour
     public float speed = 5;
     [SerializeField, Tooltip("The speed the player turns.")] 
     protected float turnSpeed = 180;
-    // Stores Camera the player will be using.
-    [Tooltip("Store the camera in the scene here.")]
-    public Camera playerCamera;
+    
     [Header("Weaponry:"), Tooltip("The weapon the pawn is currently using.")]
     public Weapon weapon;
     [Tooltip("The position the weapon instaniates at so the IK doesn't look as weird.")]
@@ -63,6 +61,20 @@ public class Pawn : MonoBehaviour
 
         // Rotates a little bit towards our goal.
         transform.rotation = Quaternion.RotateTowards(transform.rotation, goalRotation, turnSpeed * Time.deltaTime);
+    }
+    protected void SwingSword()
+    {
+        if(weapon.GetComponent<SwordWeapon>())
+        {
+            weapon.GetComponent<SwordWeapon>().isAttacking = !weapon.GetComponent<SwordWeapon>().isAttacking;
+        }
+    }
+    protected void CastSpell()
+    {
+        if(weapon.GetComponent<MagicStaffWeapon>())
+        {
+            weapon.GetComponent<MagicStaffWeapon>().ShootProjectile();
+        }
     }
 
     protected void Jump()
