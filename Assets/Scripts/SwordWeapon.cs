@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class SwordWeapon : Weapon
     // Stores the animator.
     [SerializeField, Tooltip("Place the player animator here.")]
     Animator anim;
+    public bool isAttacking = false;
     public override void ShootProjectile()
     {
         throw new System.NotImplementedException();
@@ -37,9 +38,21 @@ public class SwordWeapon : Weapon
     {
         
     }
+    void SetIsAttacking(string setTo)
+    {
+        if(setTo == "True")
+        {
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Health>() != null)
+
+        if(other.gameObject.GetComponent<Health>() != null && isAttacking)
         {
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
         }
