@@ -22,60 +22,67 @@ public class Player : Pawn
     // Update is called once per frame
     void Update()
     {
-        // Handles the basic movement of the character
-        MovementHandler();
+        if (!GameManager.instance.isPaused)
+        {
+            // Handles the basic movement of the character
+            MovementHandler();
 
-        // You press down on the spacebar.
-        if (Input.GetKeyDown(key: KeyCode.Space))
-        {
-            // Sets IsGrounded to false, causing the jumping animation.
-            anim.SetBool("IsGrounded", false);
-        }
-        else
-        {
-            // If you don't press the space bar, send raycasts to see if you're on the ground or not.
-            anim.SetBool("IsGrounded", Physics.Raycast(groundPoint.position, Vector3.down, 0.5f));
-        }
+            // You press down on the spacebar.
+            if (Input.GetKeyDown(key: KeyCode.Space))
+            {
+                // Sets IsGrounded to false, causing the jumping animation.
+                anim.SetBool("IsGrounded", false);
+            }
+            else
+            {
+                // If you don't press the space bar, send raycasts to see if you're on the ground or not.
+                anim.SetBool("IsGrounded", Physics.Raycast(groundPoint.position, Vector3.down, 0.5f));
+            }
 
-        // If you press down the left control.
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            swordObject.SetActive(true);
-            staffObject.SetActive(false);
-            weapon = swordObject.GetComponent<Weapon>();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            swordObject.SetActive(false);
-            staffObject.SetActive(true);
-            weapon = staffObject.GetComponent<Weapon>();
-        }
-        if(weapon.fireType == Weapon.FireType.autoFire)
-        {
-            if (Input.GetButton("Fire1"))
+            // If you press down the left control.
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                weapon.OnTriggerHold();
+                anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
             }
-        }
-        if (weapon.fireType == Weapon.FireType.singleFire)
-        {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                weapon.OnTriggerPull();
+                swordObject.SetActive(true);
+                staffObject.SetActive(false);
+                weapon = swordObject.GetComponent<Weapon>();
             }
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                weapon.OntriggerRelease();
+                swordObject.SetActive(false);
+                staffObject.SetActive(true);
+                weapon = staffObject.GetComponent<Weapon>();
             }
-        }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            //Todo alt fire
+            if (weapon.fireType == Weapon.FireType.autoFire)
+            {
+                if (Input.GetButton("Fire1"))
+                {
+                    weapon.OnTriggerHold();
+                }
+            }
+            if (weapon.fireType == Weapon.FireType.singleFire)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    weapon.OnTriggerPull();
+                }
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    weapon.OntriggerRelease();
+                }
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                //Todo alt fire
 
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.instance.ChangePauseState(true);
+            }
         }
     }
     /// <summary>

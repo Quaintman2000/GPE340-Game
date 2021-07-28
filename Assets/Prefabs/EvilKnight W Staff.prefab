@@ -25,6 +25,11 @@ PrefabInstance:
       propertyPath: attackRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2734687271665604294, guid: 545c7980f91fc2a48b7497bde87dcc9f,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6956156362131815904, guid: 545c7980f91fc2a48b7497bde87dcc9f,
         type: 3}
       propertyPath: m_LocalPosition.x

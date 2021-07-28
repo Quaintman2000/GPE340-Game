@@ -72,6 +72,36 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 9021335192956256910}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.1345632
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.00029099168
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.11984708
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.001523648
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.116021186
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757164790181963241, guid: a727a699d653b9a419d019124be82211,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.76030606
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6010158935571528880, guid: a727a699d653b9a419d019124be82211, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a727a699d653b9a419d019124be82211, type: 3}
@@ -107,6 +137,11 @@ PrefabInstance:
     - target: {fileID: 580148635, guid: 545c7980f91fc2a48b7497bde87dcc9f, type: 3}
       propertyPath: attackRange
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734687271665604294, guid: 545c7980f91fc2a48b7497bde87dcc9f,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6956156362131815904, guid: 545c7980f91fc2a48b7497bde87dcc9f,
         type: 3}

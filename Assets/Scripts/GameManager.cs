@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public bool isPaused;
+
     public void Awake()
     {
         if(instance != null)
@@ -28,5 +30,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangePauseState(bool value)
+    {
+        isPaused = value;
+
     }
 }

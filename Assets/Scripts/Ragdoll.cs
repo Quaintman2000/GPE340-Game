@@ -19,7 +19,6 @@ public class Ragdoll : MonoBehaviour
         ragdollColliders = new List<Collider>(GetComponentsInChildren<Collider>());
         ragdollRigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
-        StopRagdoll();
     }
 
     // Update is called once per frame

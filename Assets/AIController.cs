@@ -44,54 +44,51 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angleToPlayer = Vector3.Angle(transform.forward, (followTarget.position - transform.position));
-        distanceToPlayer = Vector3.Distance(transform.position, followTarget.position);
-
-        if (canAttack)
+        if (!GameManager.instance.isPaused)
         {
-            currentAIState = aIState.attack;
-            if(agent.enabled != false)
+            angleToPlayer = Vector3.Angle(transform.forward, (followTarget.position - transform.position));
+            distanceToPlayer = Vector3.Distance(transform.position, followTarget.position);
+
+
+
+            if (currentAIState == aIState.follow)
             {
-                agent.enabled = false;
+                if (Time.time >= nextDesisionTime)
+                {
+                    agent.SetDestination(followTarget.position);
+                    nextDesisionTime = Time.time + decisionDelay;
+                }
+
+                // Get the desired movement from the agent.
+                Vector3 desiredMovement = agent.desiredVelocity;
+                // Invert it
+                desiredMovement = this.transform.InverseTransformDirection(desiredMovement);
+                // Remove the speed by normailizing it to 1
+                desiredMovement = desiredMovement.normalized;
+                // Add the pawn speed.
+                desiredMovement *= pawn.speed;
+                // Pass into our root motion animator.
+                animator.SetFloat("Forward", desiredMovement.z);
+                animator.SetFloat("Right", desiredMovement.x);
+
+                if (canAttack)
+                {
+                    agent.isStopped = true;
+                    currentAIState = aIState.attack;
+                }
             }
-            
-        }
-        else
-        {
-           currentAIState = aIState.follow;
-            if (agent.enabled != true)
+            else if (currentAIState == aIState.attack)
             {
-                agent.enabled = true;
+
+                weapon.OnTriggerPull();
+                if (!canAttack)
+                {
+                    agent.isStopped = false;
+                    currentAIState = aIState.follow;
+                }
+
             }
-            
         }
-
-        if (currentAIState == aIState.follow)
-        {
-            if (Time.time >= nextDesisionTime)
-            {
-                agent.SetDestination(followTarget.position);
-                nextDesisionTime = Time.time + decisionDelay;
-            }
-
-            // Get the desired movement from the agent.
-            Vector3 desiredMovement = agent.desiredVelocity;
-            // Invert it
-            desiredMovement = this.transform.InverseTransformDirection(desiredMovement);
-            // Remove the speed by normailizing it to 1
-            desiredMovement = desiredMovement.normalized;
-            // Add the pawn speed.
-            desiredMovement *= pawn.speed;
-            // Pass into our root motion animator.
-            animator.SetFloat("Forward", desiredMovement.z);
-            animator.SetFloat("Right", desiredMovement.x);
-        }
-        else if(currentAIState == aIState.attack)
-        {
-            weapon.OnTriggerPull();
-          
-        }
-
     }
 
     public Transform GetNearestPlayerTransform()
