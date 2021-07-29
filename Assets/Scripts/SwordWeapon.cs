@@ -42,9 +42,9 @@ public class SwordWeapon : Weapon
     private void OnTriggerEnter(Collider other)
     {
 
-        if(other.gameObject.GetComponent<Health>() != null && isAttacking)
+        if(other.gameObject.GetComponentInParent<Health>() != null && isAttacking)
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            other.gameObject.GetComponentInParent<Health>().TakeDamage(damage);
         }
     }
 }

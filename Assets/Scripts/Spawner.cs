@@ -57,10 +57,14 @@ public abstract class Spawner : MonoBehaviour
     }
     protected void OnDrawGizmos()
     {
+        // Sets the gizmo's color
         Gizmos.color = gizmoColor;
         
+        // Sets the box off set to fit better on the scene
         float boxOffsetY = boxSize.y / 2;
+        // Draws cube at the position of the spawner
         Gizmos.DrawCube(transform.position + (boxOffsetY * Vector3.up), boxSize);
+        // Draws a ray in the middle of the cube towards the direction facing.
         Gizmos.DrawRay(transform.position + (boxOffsetY * Vector3.up), transform.forward * (boxSize.z));
     }
 }

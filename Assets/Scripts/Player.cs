@@ -44,14 +44,18 @@ public class Player : Pawn
             {
                 anim.SetBool("IsCrouching", !(anim.GetBool("IsCrouching")));
             }
+            // If press the 1 key
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
+                // Activate sword
                 swordObject.SetActive(true);
                 staffObject.SetActive(false);
                 weapon = swordObject.GetComponent<Weapon>();
             }
+            // if press the 2 key
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
+                // Activate Staff
                 swordObject.SetActive(false);
                 staffObject.SetActive(true);
                 weapon = staffObject.GetComponent<Weapon>();

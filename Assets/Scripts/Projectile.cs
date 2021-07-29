@@ -27,11 +27,11 @@ public class Projectile : MonoBehaviour
     {
         Debug.Log("Hit " + other.gameObject.name);
         // If it hits anything else with a health bar
-        if (other.gameObject.GetComponent<Health>() != null)
+        if (other.gameObject.GetComponentInParent<Health>() != null)
         {
             Debug.Log(other.gameObject.name + "has a health");
             // Subtract their health from damage.
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            other.gameObject.GetComponentInParent<Health>().TakeDamage(damage);
 
         }
         // destroys the bullet after it hits something and applies it effects.
